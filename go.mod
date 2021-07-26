@@ -1,4 +1,4 @@
-module github.com/kislerdm/aws-amplify-deploy-zip
+module github.com/kislerdm/terraform-provider-aws_amplify_deploy_zip
 
 go 1.16
 
