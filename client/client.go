@@ -5,8 +5,8 @@ import (
 	"context"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
-	"os"
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -29,8 +29,9 @@ func New(region string) *Client {
 }
 
 func putZip(d io.Reader, url string) error {
-	c := http.Client{Timeout: 5 * time.Second}
+	c := http.Client{Timeout: 5 * time.Minute}
 	req, err := http.NewRequest("PUT", url, d)
+	log.Println(req)
 	if err != nil {
 		return err
 	}
@@ -45,11 +46,10 @@ func putZip(d io.Reader, url string) error {
 }
 
 func (c *Client) DeployZip(ctx context.Context, appID, branch, path string) error {
-	f, err := os.Open(path)
+	data, err := ReadZip(path)
 	if err != nil {
 		return err
 	}
-	defer f.Close()
 	s, err := c.CreateDeploymentWithContext(ctx,
 		&amplify.CreateDeploymentInput{
 			AppId:      aws.String(appID),
@@ -59,7 +59,7 @@ func (c *Client) DeployZip(ctx context.Context, appID, branch, path string) erro
 	if err != nil {
 		return err
 	}
-	if err := putZip(f, *s.ZipUploadUrl); err != nil {
+	if err := putZip(data, *s.ZipUploadUrl); err != nil {
 		return err
 	}
 	_, err = c.StartDeployment(&amplify.StartDeploymentInput{
