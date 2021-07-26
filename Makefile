@@ -1,10 +1,10 @@
 TEST?=$$(go list ./... | grep -v 'vendor')
 HOSTNAME=hashicorp.com
 NAMESPACE=kislerdm
-NAME=awsamplify_deployment
+NAME=awsamplify
 BINARY=terraform-provider-${NAME}
-VERSION=1.0
-OS_ARCH=darwin_arm
+VERSION=1.0.0
+OS_ARCH=darwin_arm64
 
 default: install
 
@@ -13,10 +13,11 @@ build:
 
 release:
 	GOOS=darwin GOARCH=amd64 go build -o ./bin/${BINARY}_${VERSION}_darwin_amd64
-	GOOS=darwin GOARCH=arm go build -o ./bin/${BINARY}_${VERSION}_darwin_arm
+	GOOS=darwin GOARCH=arm64 go build -o ./bin/${BINARY}_${VERSION}_darwin_arm64
 	GOOS=linux GOARCH=386 go build -o ./bin/${BINARY}_${VERSION}_linux_386
 	GOOS=linux GOARCH=amd64 go build -o ./bin/${BINARY}_${VERSION}_linux_amd64
 	GOOS=linux GOARCH=arm go build -o ./bin/${BINARY}_${VERSION}_linux_arm
+	GOOS=linux GOARCH=arm64 go build -o ./bin/${BINARY}_${VERSION}_linux_arm64
 
 install: build
 	mkdir -p ~/.terraform.d/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}/${VERSION}/${OS_ARCH}
