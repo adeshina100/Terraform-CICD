@@ -5,7 +5,6 @@ import (
 	"context"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"time"
 
@@ -31,7 +30,6 @@ func New(region string) *Client {
 func putZip(d io.Reader, url string) error {
 	c := http.Client{Timeout: 5 * time.Minute}
 	req, err := http.NewRequest("PUT", url, d)
-	log.Println(req)
 	if err != nil {
 		return err
 	}
@@ -45,6 +43,7 @@ func putZip(d io.Reader, url string) error {
 	return nil
 }
 
+// DeployZip deploys the web-app into AWS Cognito from zip archive.
 func (c *Client) DeployZip(ctx context.Context, appID, branch, path string) error {
 	data, err := ReadZip(path)
 	if err != nil {
