@@ -7,7 +7,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/kislerdm/terraform-provider-aws_amplify_deploy_zip/client"
+	"github.com/kislerdm/terraform-provider-awsamplify/client"
 )
 
 var (
@@ -17,7 +17,7 @@ var (
 	branch string
 	path   string
 	ctx    = context.Background()
-	app    = "awsamplifyfromzip"
+	app    = "awsamplifydeployzip"
 	logs   = log.New(os.Stdout, "", log.LUTC|log.LstdFlags)
 )
 

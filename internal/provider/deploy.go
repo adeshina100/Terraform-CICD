@@ -6,7 +6,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/kislerdm/terraform-provider-aws_amplify_deploy_zip/client"
+	"github.com/kislerdm/terraform-provider-awsamplify/client"
 )
 
 var c *client.Client
