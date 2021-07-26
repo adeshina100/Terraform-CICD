@@ -1,4 +1,4 @@
-package amplifydeployzip
+package provider
 
 import (
 	"context"
@@ -6,7 +6,7 @@ import (
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/kislerdm/aws-amplify-deploy-zip/client"
+	"github.com/kislerdm/terraform-provider-aws_amplify_deploy_zip/client"
 )
 
 var c *client.Client

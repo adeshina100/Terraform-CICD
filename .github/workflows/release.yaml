@@ -1,4 +1,4 @@
-name: Release
+name: Release Terraform Provide
 
 on:
   release:
