@@ -25,7 +25,7 @@ func stdInFlag() {
 	f := flag.NewFlagSet("deploy", flag.ExitOnError)
 	f.StringVar(&region, "region", "", "AWS Region, required")
 	f.StringVar(&appId, "app-id", "", "AWS Amplify application ID, required")
-	f.StringVar(&branch, "branch", "", "AWS Amplify frontend environment branch, required")
+	f.StringVar(&branch, "branch-name", "", "AWS Amplify frontend environment branch, required")
 	f.StringVar(&path, "path", "", "Path to zip archive with the app, required")
 	f.Usage = func() {
 		fmt.Println("Tool to deploy web client to AWS Amplify from zip archive")
