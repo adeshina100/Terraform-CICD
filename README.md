@@ -12,7 +12,7 @@ AWS Amplify provides an endpoint to deploy web client as zip archive. As of 2021
 Clone repository to: `$GOPATH/src/github.com/kislerdm/terraform-provider-awsamplify`
 
 ```bash
-git clone git@github.com:terraform-providers/terraform-provider-awsamplify $GOPATH/src/github.com/kislerdm/terraform-provider-awsamplify
+git clone git@github.com:kislerdm/terraform-provider-awsamplify $GOPATH/src/github.com/kislerdm/terraform-provider-awsamplify
 ```
 
 Enter the provider directory and build the provider
