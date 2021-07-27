@@ -2,9 +2,14 @@
 page_title: "awsamplify_deploy_zip Resource - terraform-provider-awsamplify"
 subcategory: ""
 description: |-
-    The awsamplify_deploy_zip resource mimics the manual deployment of a web app to AWS Amplify by submitting its build bundle zip archive.
+    The `awsamplify_deploy_zip` resource mimics the manual deployment of a web app to AWS Amplify by submitting its build bundle zip archive.
     The triggers argument allows specifying an arbitrary set of values that, when changed, will cause the app to be redeployed.
 ---
+
+# Resource: awsamplify_deploy_zip
+
+The `awsamplify_deploy_zip` resource mimics the manual deployment of a web app to AWS Amplify by submitting its build bundle zip archive.
+The triggers argument allows specifying an arbitrary set of values that, when changed, will cause the app to be redeployed.
 
 ## Example Usage
 

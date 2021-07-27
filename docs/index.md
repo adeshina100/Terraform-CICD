@@ -6,7 +6,7 @@ description: |-
 
 # AWSAmplify Provider
 
-The `awsamplify` provider the option of web apps deployment to [AWS Amplify](https://aws.amazon.com/amplify/) frontend environment by submitting [zip archive of the app build bundle](https://docs.aws.amazon.com/amplify/latest/userguide/manual-deploys.html).
+The `awsamplify` provider provides the option of web apps deployment to [AWS Amplify](https://aws.amazon.com/amplify/) by submitting a [zip archive of the app build bundle](https://docs.aws.amazon.com/amplify/latest/userguide/manual-deploys.html).
 
 ## Example Usage
 
